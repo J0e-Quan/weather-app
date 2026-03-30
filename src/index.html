@@ -33,5 +33,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
   </head>
-  <body></body>
+  <body>
+    <section class="header">
+      <h1 class="location"></h1>
+      <input type="search" class="location-search" placeholder="input a location">
+      <div class="unit-toggle">
+        <button type="button" class="unit celsius">℃</button>
+        <button type="button" class="unit farenheit">℉</button>
+      </div>
+    </section>
+    <section class="content">
+      <h2 class="today heading">Today's Weather</h2>
+      <div class="data-grid today">
+        <!-- Show temp + precipitation + humidity for 7 hrs -->
+      </div>
+      <h2 class="week heading">This Week's Weather</h2>
+      <div class="data-grid week">
+        <!-- Show temp + precipitation + humidity for 7 days -->
+      </div>
+    </section>
+  </body>
 </html>
