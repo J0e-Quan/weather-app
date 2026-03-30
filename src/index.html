@@ -35,21 +35,28 @@
   </head>
   <body>
     <section class="header">
-      <h1 class="location"></h1>
-      <input type="search" class="location-search" placeholder="input a location">
-      <div class="unit-toggle">
-        <button type="button" class="unit celsius">℃</button>
-        <button type="button" class="unit farenheit">℉</button>
+      <h1 class="location">Insert place here</h1>
+      <div class="right-container">
+        <input type="search" class="search" placeholder="input a location">
+        <button type="button" class="search-submit">Search</button>
+        <div class="unit-toggle">
+          <button type="button" class="unit celsius">℃</button>
+          <button type="button" class="unit farenheit">℉</button>
+        </div>
       </div>
     </section>
     <section class="content">
-      <h2 class="today heading">Today's Weather</h2>
-      <div class="data-grid today">
-        <!-- Show temp + precipitation + humidity for 7 hrs -->
+      <div class="data-container">
+        <h2 class="today heading">Today's Weather</h2>
+        <div class="data-grid today">
+          <!-- Show temp + precipitation + humidity for 7 hrs -->
+        </div>
       </div>
-      <h2 class="week heading">This Week's Weather</h2>
-      <div class="data-grid week">
-        <!-- Show temp + precipitation + humidity for 7 days -->
+      <div class="data-container">
+        <h2 class="week heading">This Week's Weather</h2>
+        <div class="data-grid week">
+          <!-- Show temp + precipitation + humidity for 7 days -->
+        </div>
       </div>
     </section>
   </body>
