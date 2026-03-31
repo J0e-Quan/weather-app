@@ -2,7 +2,7 @@ import loadingPath from './assets/loading.gif'
 
 export async function showData(data) {
   updateLocation(data.resolvedAddress)
-  updateMainWeather(data.currentConditions.feelslike, data.currentConditions.conditions) 
+  updateMainWeather(data.currentConditions.feelslike, data.currentConditions.conditions)
   updateTodayWeather(data)
   updateWeekWeather(data)
   updateTheme(data.currentConditions.icon)
@@ -21,7 +21,6 @@ function clearData() {
 }
 
 export function showLoading() {
-  console.log('loading...')
   clearData()
   const content = document.querySelector('.content')
   const loadingContainer = document.createElement('div')
@@ -36,9 +35,12 @@ function updateLocation(location) {
   const locationText = document.querySelector('.location')
   const lowerCasedLocation = location.toLowerCase()
   // lowerCasedLocation is split with space, each word has its first letter capitalised and is then joined back together
-  const formattedLocation = lowerCasedLocation.split(' ').map(word => { 
-    return word.charAt(0).toUpperCase() + word.slice(1)
-  }).join(' ')
+  const formattedLocation = lowerCasedLocation
+    .split(' ')
+    .map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    })
+    .join(' ')
   locationText.textContent = formattedLocation.charAt(0).toUpperCase() + formattedLocation.slice(1)
 }
 
@@ -54,7 +56,7 @@ async function updateTodayWeather(data) {
   const todayDiv = document.querySelector('.data-grid.today')
   for (let i = 1; i < 8; i++) {
     // from top to bottom: hour, temp, precipitation, uv index
-    let hourData = await data.days[0].hours[(currentHourIndex + i)]
+    let hourData = await data.days[0].hours[currentHourIndex + i]
     if (hourData === undefined) {
       hourData = data.days[0].hours[0]
     }
@@ -94,7 +96,7 @@ function getCurrentHourIndex(data) {
 async function updateWeekWeather(data) {
   const weekDiv = document.querySelector('.data-grid.week')
   for (let i = 1; i < 8; i++) {
-    const dayData = await data.days[(0 + i)]
+    const dayData = await data.days[0 + i]
     const dataBox = document.createElement('div')
     dataBox.classList.add('data-box')
     const date = document.createElement('p')
@@ -120,7 +122,7 @@ async function updateWeekWeather(data) {
 function updateTheme(condition) {
   const background = document.querySelector('body')
   // remove all classes from background first
-  background.classList.forEach(className => {
+  background.classList.forEach((className) => {
     background.classList.remove(className)
   })
   if (condition.includes('clear-day')) {
@@ -128,7 +130,7 @@ function updateTheme(condition) {
   } else if (condition.includes('clear-night')) {
     background.classList.add('clear-night')
   } else if (condition.includes('cloudy') || condition.includes('fog')) {
-    background.classList.add('cloudy') 
+    background.classList.add('cloudy')
   } else if (condition.includes('rain')) {
     background.classList.add('rain')
   }

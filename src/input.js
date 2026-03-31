@@ -1,9 +1,10 @@
-import { getData } from "./data.js"
-import { removeLoading, showData, showLoading } from "./ui.js"
+import { getData } from './data.js'
+import { removeLoading, showData, showLoading } from './ui.js'
 
 const buttons = document.querySelector('.right-container')
-const search = document.querySelector('.search')
-const metric = document.querySelector('.metric')
+export const search = document.querySelector('.search')
+export const searchSubmit = document.querySelector('.search-submit')
+export const metric = document.querySelector('.metric')
 const imperial = document.querySelector('.imperial')
 let unitType = 'metric'
 
@@ -15,7 +16,7 @@ async function handleButtonPress(e) {
     if (search.value === '') {
       alert('location cannot be empty!')
       return
-    } 
+    }
     showLoading()
     const data = await getData(search.value, unitType)
     if (data === false) {
@@ -29,7 +30,7 @@ async function handleButtonPress(e) {
     if (search.value === '') {
       alert('location cannot be empty!')
       return
-    }   
+    }
     metric.classList.add('checked')
     imperial.classList.remove('checked')
     unitType = 'metric'
@@ -46,10 +47,10 @@ async function handleButtonPress(e) {
     if (search.value === '') {
       alert('location cannot be empty!')
       return
-    } 
+    }
     imperial.classList.add('checked')
     metric.classList.remove('checked')
-    unitType = 'us'   // visual crossing uses 'us' instead of 'imperial'
+    unitType = 'us' // visual crossing uses 'us' instead of 'imperial'
     showLoading()
     const data = await getData(search.value, unitType)
     if (data === false) {
