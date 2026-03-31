@@ -2,17 +2,24 @@
 
 weather app project based on The Odin Project curriculum.
 
-Live demo link:
+Live demo link: https://j0e-quan.github.io/weather-app/
 
 ## Technologies used:
 
--
+- HTML for basic page layout
+- CSS for styling page elements and use of web fonts (Inter and Urbanist)
+- Flexbox and Grid for arranging page elements and improving responsiveness
+- JavaScript for site logic and rendering weather data
 - npm and webpack for managing and bundling code modules
 - Git for version control
 
 ## Key features:
 
--
+- Uses Visual Crossing API to provide accurate weather data
+- Background changes depending on current weather conditions
+- Hourly and 7-day forecasts are provided
+- Loading screen is shown until data is fetched
+- Error alerts provide info on incorrect inputs
 
 ## Credits:
 
@@ -20,7 +27,10 @@ Live demo link:
 
 ## Gallery:
 
-![alt-text](img-path)
+![picture showing weather data displayed in Celsius](./readme-assets/celsius.jpeg)
+![picture showing weather data displayed in Fahrenheit](./readme-assets/fahrenheit.jpeg)
+![picture showing weather of a city at night, the background is dark blue](./readme-assets/night.jpeg)
+![picture showing weather of a city during the day, the background is light blue](./readme-assets/day.jpeg)
 
 ## Getting started:
 
