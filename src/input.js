@@ -1,4 +1,5 @@
 import { getData } from "./data.js"
+import { showData } from "./ui.js"
 
 const buttons = document.querySelector('.right-container')
 const search = document.querySelector('.search')
@@ -13,7 +14,7 @@ async function handleButtonPress(e) {
   if (targetBtn.classList.contains('search-submit')) {
     const data = await getData(search.value, unitType)
     console.log(data)
-    // call ui.js function to display data
+    showData(data)
   } else if (targetBtn.classList.contains('metric')) {
     metric.classList.add('checked')
     imperial.classList.remove('checked')
