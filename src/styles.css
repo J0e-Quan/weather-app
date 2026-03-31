@@ -186,7 +186,7 @@ button {
 }
 
 .clear-day {
-  background-color: aquamarine;
+  background-color: rgb(127, 208, 255);
 }
 
 .clear-night {
@@ -194,9 +194,9 @@ button {
 }
 
 .cloudy {
-  background-color: azure;
+  background-color: rgb(180, 190, 190);
 }
 
 .rain {
-  background-color: grey;
+  background-color: rgb(100, 100, 100);
 }
