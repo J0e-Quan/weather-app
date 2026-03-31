@@ -1,5 +1,6 @@
 export function showData(data) {
   updateLocation(data.resolvedAddress)
+  
 }
 
 function updateLocation(location) {
