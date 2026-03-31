@@ -5,7 +5,7 @@ export function getData(location, unitType) {
   }).then(function(response) {
     return response
   })
-  .catch(function(error) {
-    return error
+  .catch(() => {
+    return false
   })
 }

@@ -134,7 +134,7 @@ function updateTheme(condition) {
   }
 }
 
-function removeLoading() {
+export function removeLoading() {
   const loadingContainer = document.querySelector('.loading-container')
   loadingContainer.remove()
 }
