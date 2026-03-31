@@ -1,7 +1,15 @@
 export function showData(data) {
+  clearData()
   updateLocation(data.resolvedAddress)
   updateMainWeather(data.currentConditions.feelslike, data.currentConditions.conditions) 
   updateTodayWeather(data)
+}
+
+function clearData() {
+  const todayDiv = document.querySelector('.data-grid.today')
+  todayDiv.innerHTML = ''
+  const weekDiv = document.querySelector('.data-grid.week')
+  weekDiv.innerHTML = ''
 }
 
 function updateLocation(location) {
