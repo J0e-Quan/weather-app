@@ -57,11 +57,13 @@ button {
 }
 
 .header {
-  padding: 1rem 2rem;
+  margin: 1rem 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 2rem;
+  gap: 1rem;
+  background-color: white;
+  border-radius: 24px;
 }
 
 .right-container {
@@ -91,10 +93,12 @@ button {
 
 .unit.checked {
   background-color: grey;
+  color: white;
 }
 
 .location {
   font-size: 3.5rem;
+  padding: 1rem 2rem;
 }
 
 .unit-toggle {
@@ -111,14 +115,14 @@ button {
 
 .heading {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
 }
 
 .data-container.main {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   gap: 2rem;
-  align-items: baseline;
+  align-items: center;
 }
 
 .current-temp {
@@ -133,7 +137,7 @@ button {
 
 .data-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   background-color: white;
   border-radius: 24px;
   padding: 0.5rem 1rem;
@@ -144,6 +148,7 @@ button {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  padding: 1rem 2rem;
 }
 
 .data-box {
@@ -178,4 +183,20 @@ button {
 .uv-text {
   grid-column: 2;
   grid-row: 3;
+}
+
+.clear-day {
+  background-color: aquamarine;
+}
+
+.clear-night {
+  background-color: rgb(0, 0, 100);
+}
+
+.cloudy {
+  background-color: azure;
+}
+
+.rain {
+  background-color: grey;
 }

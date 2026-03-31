@@ -4,6 +4,7 @@ export function showData(data) {
   updateMainWeather(data.currentConditions.feelslike, data.currentConditions.conditions) 
   updateTodayWeather(data)
   updateWeekWeather(data)
+  updateTheme(data.currentConditions.icon)
 }
 
 function clearData() {
@@ -26,7 +27,7 @@ function updateLocation(location) {
 function updateMainWeather(temp, condition) {
   const tempText = document.querySelector('.current-temp')
   const conditionText = document.querySelector('.current-condition')
-  tempText.textContent = temp + '°' + '  |  '
+  tempText.textContent = temp + '°' + ' | '
   conditionText.textContent = condition.charAt(0).toUpperCase() + condition.slice(1)
 }
 
@@ -95,5 +96,22 @@ async function updateWeekWeather(data) {
     uv.textContent = 'UV: ' + dayData.uvindex
     dataBox.appendChild(uv)
     weekDiv.appendChild(dataBox)
+  }
+}
+
+function updateTheme(condition) {
+  const background = document.querySelector('body')
+  // remove all classes from background first
+  background.classList.forEach(className => {
+    background.classList.remove(className)
+  })
+  if (condition.includes('clear-day')) {
+    background.classList.add('clear-day')
+  } else if (condition.includes('clear-night')) {
+    background.classList.add('clear-night')
+  } else if (condition.includes('cloudy') || condition.includes('fog')) {
+    background.classList.add('cloudy') 
+  } else if (condition.includes('rain')) {
+    background.classList.add('rain')
   }
 }
