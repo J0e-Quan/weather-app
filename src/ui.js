@@ -1,17 +1,35 @@
-export function showData(data) {
-  clearData()
+import loadingPath from './assets/loading.gif'
+
+export async function showData(data) {
   updateLocation(data.resolvedAddress)
   updateMainWeather(data.currentConditions.feelslike, data.currentConditions.conditions) 
   updateTodayWeather(data)
   updateWeekWeather(data)
   updateTheme(data.currentConditions.icon)
+  removeLoading()
 }
 
 function clearData() {
+  const currentTemp = document.querySelector('.current-temp')
+  currentTemp.textContent = ''
+  const currentCondition = document.querySelector('.current-condition')
+  currentCondition.textContent = ''
   const todayDiv = document.querySelector('.data-grid.today')
   todayDiv.innerHTML = ''
   const weekDiv = document.querySelector('.data-grid.week')
   weekDiv.innerHTML = ''
+}
+
+export function showLoading() {
+  console.log('loading...')
+  clearData()
+  const content = document.querySelector('.content')
+  const loadingContainer = document.createElement('div')
+  loadingContainer.classList.add('loading-container')
+  const loading = document.createElement('img')
+  loading.src = loadingPath
+  loadingContainer.appendChild(loading)
+  content.appendChild(loadingContainer)
 }
 
 function updateLocation(location) {
@@ -114,4 +132,9 @@ function updateTheme(condition) {
   } else if (condition.includes('rain')) {
     background.classList.add('rain')
   }
+}
+
+function removeLoading() {
+  const loadingContainer = document.querySelector('.loading-container')
+  loadingContainer.remove()
 }

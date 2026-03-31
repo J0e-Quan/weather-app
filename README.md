@@ -16,7 +16,7 @@ Live demo link:
 
 ## Credits:
 
--
+- loading GIF was taken from [GIPHY](https://giphy.com/gifs/juan-gabriel-sSgvbe1m3n93G)
 
 ## Gallery:
 
