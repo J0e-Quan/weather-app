@@ -3,6 +3,7 @@ export function showData(data) {
   updateLocation(data.resolvedAddress)
   updateMainWeather(data.currentConditions.feelslike, data.currentConditions.conditions) 
   updateTodayWeather(data)
+  updateWeekWeather(data)
 }
 
 function clearData() {
@@ -69,4 +70,30 @@ function getCurrentHourIndex(data) {
     return hour.datetime.slice(0, 2) === currentHour
   })
   return currentHourIndex
+}
+
+async function updateWeekWeather(data) {
+  const weekDiv = document.querySelector('.data-grid.week')
+  for (let i = 1; i < 8; i++) {
+    const dayData = await data.days[(0 + i)]
+    const dataBox = document.createElement('div')
+    dataBox.classList.add('data-box')
+    const date = document.createElement('p')
+    date.classList.add('time-text')
+    date.textContent = dayData.datetime.slice(5, 10)
+    dataBox.appendChild(date)
+    const temp = document.createElement('p')
+    temp.classList.add('temp-text')
+    temp.textContent = dayData.feelslike + '°'
+    dataBox.appendChild(temp)
+    const precipitation = document.createElement('p')
+    precipitation.classList.add('precipitation-text')
+    precipitation.textContent = dayData.precipprob + '%'
+    dataBox.appendChild(precipitation)
+    const uv = document.createElement('p')
+    uv.classList.add('uv-text')
+    uv.textContent = 'UV: ' + dayData.uvindex
+    dataBox.appendChild(uv)
+    weekDiv.appendChild(dataBox)
+  }
 }
