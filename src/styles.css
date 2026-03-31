@@ -81,6 +81,15 @@ button {
   font-size: 2rem;
 }
 
+.unit:hover, .search-submit:hover {
+  background-color: lightgray;
+  box-shadow: 0 4px 8px black;
+}
+
+.unit.checked {
+  background-color: grey;
+}
+
 .location {
   font-size: 3.5rem;
 }
